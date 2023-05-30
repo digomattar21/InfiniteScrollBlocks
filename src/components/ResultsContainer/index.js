@@ -13,7 +13,7 @@ function ResultsContainer() {
   }, []);
 
   const fetchMoreData = () => {
-    if (items.length >= 200) {
+    if (items.length >= 400) {
       setHasMore(false);
       return;
     }

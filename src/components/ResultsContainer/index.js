@@ -23,20 +23,19 @@ function ResultsContainer() {
         `${process.env.REACT_APP_BASE_URL}/families?skip=${items.length}&take=35`
       )
       .then((res) => {
-        console.log(res);
         setItems(items.concat(res.data));
       });
   };
 
   return (
-    <section className="mt-4 px-4 h-auto  md:px-20 lg:px-40 w-full h-24 flex items-start flex-col">
+    <section className="mt-4 mb-10 md:mb-0 px-4 h-auto  md:px-20 lg:px-40 w-full h-24 flex items-start flex-col">
       <div className="mt-8 text-2xl font-medium">Resultados</div>
       <InfiniteScroll
         dataLength={items.length}
         next={fetchMoreData}
         hasMore={hasMore}
         loader={
-          <div className="h-full flex items-center justify-center overflow-y-hidden mt-20 mb-10">
+          <div className="h-full mt-4 flex items-center justify-center overflow-y-hidden md:mt-20 mb-10">
             <Loader />
           </div>
         }
